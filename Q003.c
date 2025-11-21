@@ -1,38 +1,22 @@
 #include <stdio.h>
-int main(){
-    int num,c1=0, number;
-    printf("Enter the number of integers you want to enter: ");
-    scanf("%d", &num);
-    int arr[num];
-    for (int i = 0; i < num; i++)
-    {
-        printf("Enter element %d :",i+1);
-        scanf("%d", &arr[i]);
-    }
-    printf("Enter the integer for finding the frequency: ");
-    scanf("%d", &number);
-    for (int i = 0; i < num; i++)
-    {
-        if (arr[i] == number){
-            c1=c1+1;
-        }
-    }
-    printf("%d has occured %d times.", number, c1);   
+int FIBO(int num) {
+    if (num == 0)
+        return 0;
+    else if (num == 1)
+        return 1;
+    else
+        return FIBO(num - 1) + FIBO(num - 2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int main() {
+    int n, i;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    printf("Fibonacci Series up to %d terms:\n", n);
+    for (i = 0; i < n; i++) {
+        printf("%d ", FIBO(i));
+    }
+    return 0;
+}
 
 
 
